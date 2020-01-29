@@ -1,0 +1,30 @@
+div {
+  height: 90vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.example-card {
+  max-width: 400px;
+  max-height: 400px;
+  margin: 10px;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+}
+
+.example-full-width {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

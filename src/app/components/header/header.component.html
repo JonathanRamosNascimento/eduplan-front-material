@@ -1,0 +1,46 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches" *ngIf="shouldRun">
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="example-app-name">Eduplan</h1>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56">
+      <mat-nav-list>
+        <div class="item">
+          <a mat-list-item [matMenuTriggerFor]="menu">Disciplina</a>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item [routerLink]="['/novoplano']" routerLinkActive="router-link-active">Nova</button>
+            <button mat-menu-item [routerLink]="['/listaplanos']" routerLinkActive="router-link-active">Lista</button>
+          </mat-menu>
+        </div>
+
+        <div class="item">
+          <a mat-list-item [matMenuTriggerFor]="menu">Plano de Ensino</a>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item [routerLink]="['/novoplano']" routerLinkActive="router-link-active">Novo</button>
+            <button mat-menu-item [routerLink]="['/listaplanos']" routerLinkActive="router-link-active">Lista</button>
+          </mat-menu>
+        </div>
+
+        <div class="item">
+          <a mat-list-item [matMenuTriggerFor]="menu">Usuário</a>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item [routerLink]="['/novoplano']" routerLinkActive="router-link-active">Novo</button>
+            <button mat-menu-item [routerLink]="['/listaplanos']" routerLinkActive="router-link-active">Lista</button>
+          </mat-menu>
+        </div>
+        
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+<div *ngIf="!shouldRun">Please open on Stackblitz to see result</div>

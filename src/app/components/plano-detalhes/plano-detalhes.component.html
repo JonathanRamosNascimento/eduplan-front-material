@@ -1,0 +1,17 @@
+<mat-card class="example-card" fxFlex>
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{plano?.data.disciplina}}</mat-card-title>
+    <mat-card-subtitle>{{plano?.data.user.nome}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div>
+      <b>Ementa</b>
+    </div>
+    <span>{{plano?.data.ementa}}</span>
+  </mat-card-content>
+  <mat-card-actions fxLayout="row" fxLayoutAlign="space-between start">
+    <button [routerLink]="['/listaplanos']" routerLinkActive="router-link-active" mat-raised-button>Voltar</button>
+    <button (click)="editar(plano?.data.id)" mat-raised-button color="primary">Editar</button>
+  </mat-card-actions>
+</mat-card>
