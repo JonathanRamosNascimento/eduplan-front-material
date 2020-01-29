@@ -18,26 +18,26 @@
       fixedTopGap="56">
       <mat-nav-list>
         <div class="item">
-          <a mat-list-item [matMenuTriggerFor]="menu">Disciplina</a>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item [routerLink]="['/novoplano']" routerLinkActive="router-link-active">Nova</button>
-            <button mat-menu-item [routerLink]="['/listaplanos']" routerLinkActive="router-link-active">Lista</button>
+          <a mat-list-item [matMenuTriggerFor]="disciplina">Disciplina</a>
+          <mat-menu #disciplina="matMenu" xPosition="after">
+            <button mat-menu-item [routerLink]="['/novadisciplina']" routerLinkActive="router-link-active">Nova</button>
+            <button mat-menu-item [routerLink]="['/listadisciplinas']" routerLinkActive="router-link-active">Lista</button>
           </mat-menu>
         </div>
 
         <div class="item">
-          <a mat-list-item [matMenuTriggerFor]="menu">Plano de Ensino</a>
-          <mat-menu #menu="matMenu">
+          <a mat-list-item [matMenuTriggerFor]="plano">Plano de Ensino</a>
+          <mat-menu #plano="matMenu" xPosition="after">
             <button mat-menu-item [routerLink]="['/novoplano']" routerLinkActive="router-link-active">Novo</button>
             <button mat-menu-item [routerLink]="['/listaplanos']" routerLinkActive="router-link-active">Lista</button>
           </mat-menu>
         </div>
 
         <div class="item">
-          <a mat-list-item [matMenuTriggerFor]="menu">Usuário</a>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item [routerLink]="['/novoplano']" routerLinkActive="router-link-active">Novo</button>
-            <button mat-menu-item [routerLink]="['/listaplanos']" routerLinkActive="router-link-active">Lista</button>
+          <a mat-list-item [matMenuTriggerFor]="usuario">Usuário</a>
+          <mat-menu #usuario="matMenu" xPosition="after">
+            <button mat-menu-item [routerLink]="['/novousuario']" routerLinkActive="router-link-active">Novo</button>
+            <button mat-menu-item [routerLink]="['/listausuarios']" routerLinkActive="router-link-active">Lista</button>
           </mat-menu>
         </div>
       </mat-nav-list>
