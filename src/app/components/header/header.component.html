@@ -1,9 +1,16 @@
-<div class="example-container" [class.example-is-mobile]="mobileQuery.matches" *ngIf="shouldRun">
-  <mat-toolbar color="primary" class="example-toolbar">
-    <button mat-icon-button (click)="snav.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <h1 class="example-app-name">Eduplan</h1>
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar color="primary" class="example-toolbar" *ngIf="logado">
+    <div class="menu">
+      <button mat-icon-button (click)="snav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <h1 class="example-app-name">Eduplan</h1>
+    </div>
+    <div>
+      <button mat-icon-button color="warn" (click)="sair()">
+        <mat-icon>exit_to_app</mat-icon>
+      </button>
+    </div>
   </mat-toolbar>
 
   <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
@@ -33,14 +40,12 @@
             <button mat-menu-item [routerLink]="['/listaplanos']" routerLinkActive="router-link-active">Lista</button>
           </mat-menu>
         </div>
-        
       </mat-nav-list>
     </mat-sidenav>
 
     <mat-sidenav-content>
       <router-outlet></router-outlet>
     </mat-sidenav-content>
+
   </mat-sidenav-container>
 </div>
-
-<div *ngIf="!shouldRun">Please open on Stackblitz to see result</div>

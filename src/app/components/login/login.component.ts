@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { LoginService } from './../../services/login.service';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,15 +16,25 @@ export class LoginComponent implements OnInit {
   });
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private loginService: LoginService,
+    private router: Router
   ) { }
 
   ngOnInit() {
   }
 
   login() {
-    console.log(this.loginForm.value);
-    
+    this.loginService.login(this.loginForm.value).subscribe(
+      (data) => {
+        let token = data['token'];
+        sessionStorage.setItem('eduplan_token', token);
+        this.router.navigate(['dashboard']);
+      },
+      (err) => {
+        alert('Email ou senha incorreta');
+        sessionStorage.clear();
+      }
+    );
   }
-
 }

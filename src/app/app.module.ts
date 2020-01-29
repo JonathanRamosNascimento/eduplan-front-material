@@ -22,6 +22,7 @@ import { UsuarioNovoComponent } from './components/usuario-novo/usuario-novo.com
 import { UsuarioListaComponent } from './components/usuario-lista/usuario-lista.component';
 import { UsuarioDetalhesComponent } from './components/usuario-detalhes/usuario-detalhes.component';
 import { LoginComponent } from './components/login/login.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { LoginComponent } from './components/login/login.component';
     UsuarioNovoComponent,
     UsuarioListaComponent,
     UsuarioDetalhesComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,19 @@
   right: 0;
 }
 
+.example-toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 .example-is-mobile .example-toolbar {
   position: fixed;
   z-index: 2;
