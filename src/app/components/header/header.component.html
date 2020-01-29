@@ -7,7 +7,8 @@
       <h1 class="example-app-name">Eduplan</h1>
     </div>
     <div>
-      <button mat-icon-button color="warn" (click)="sair()">
+      <button mat-icon-button color="warn" (click)="sair()" matTooltip="Sair do sistema">
+        Sair
         <mat-icon>exit_to_app</mat-icon>
       </button>
     </div>
@@ -23,11 +24,11 @@
             Disciplina
           </a>
           <mat-menu #disciplina="matMenu" xPosition="after">
-            <button mat-menu-item [routerLink]="['/novadisciplina']" routerLinkActive="router-link-active">
+            <button mat-menu-item [routerLink]="['/novadisciplina']" routerLinkActive="router-link-active" matTooltip="Criar nova disciplina">
               <mat-icon>create</mat-icon>
               Nova
             </button>
-            <button mat-menu-item [routerLink]="['/listadisciplinas']" routerLinkActive="router-link-active">
+            <button mat-menu-item [routerLink]="['/listadisciplinas']" routerLinkActive="router-link-active" matTooltip="Listar disciplinas existentes">
               <mat-icon>list</mat-icon>
               Lista
             </button>
@@ -40,11 +41,11 @@
             Plano de Ensino
           </a>
           <mat-menu #plano="matMenu" xPosition="after">
-            <button mat-menu-item [routerLink]="['/novoplano']" routerLinkActive="router-link-active">
+            <button mat-menu-item [routerLink]="['/novoplano']" routerLinkActive="router-link-active" matTooltip="Criar novo plano de ensino">
               <mat-icon>create</mat-icon>
               Novo
             </button>
-            <button mat-menu-item [routerLink]="['/listaplanos']" routerLinkActive="router-link-active">
+            <button mat-menu-item [routerLink]="['/listaplanos']" routerLinkActive="router-link-active" matTooltip="Listar planos de ensino existentes">
               <mat-icon>list</mat-icon>
               Lista
             </button>
@@ -57,11 +58,11 @@
             Usuário
           </a>
           <mat-menu #usuario="matMenu" xPosition="after">
-            <button mat-menu-item [routerLink]="['/novousuario']" routerLinkActive="router-link-active">
+            <button mat-menu-item [routerLink]="['/novousuario']" routerLinkActive="router-link-active" matTooltip="Criar novo novo usuário">
               <mat-icon>create</mat-icon>
               Novo
             </button>
-            <button mat-menu-item [routerLink]="['/listausuarios']" routerLinkActive="router-link-active">
+            <button mat-menu-item [routerLink]="['/listausuarios']" routerLinkActive="router-link-active" matTooltip="Listar usuários existentes">
               <mat-icon>list</mat-icon>
               Lista
             </button>
