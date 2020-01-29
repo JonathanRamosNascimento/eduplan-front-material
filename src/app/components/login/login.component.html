@@ -7,14 +7,14 @@
       <mat-card-content>
         <form class="example-form" [formGroup]="loginForm">
           <mat-form-field appearance="legacy" class="example-full-width">
-            <mat-label>Email</mat-label>
+            <mat-label>E-mail</mat-label>
+            <mat-icon matPrefix>email</mat-icon>
             <input matInput formControlName="email" placeholder="email@eduplan.com" type="email">
-            <mat-icon matSuffix>email</mat-icon>
           </mat-form-field>
           <mat-form-field appearance="legacy" class="example-full-width">
             <mat-label>Senha</mat-label>
+            <mat-icon matPrefix>lock</mat-icon>
             <input matInput formControlName="password" placeholder="Senha" type="password" (keyup.enter)="login()">
-            <mat-icon matSuffix>lock</mat-icon>
           </mat-form-field>
         </form>
       </mat-card-content>
