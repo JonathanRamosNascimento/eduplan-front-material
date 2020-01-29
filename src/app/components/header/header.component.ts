@@ -2,6 +2,7 @@ import { LoginService } from './../../services/login.service';
 import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { Router } from '@angular/router';
+import { NestedTreeControl } from '@angular/cdk/tree';
 
 @Component({
   selector: 'app-header',
@@ -9,12 +10,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit, OnDestroy {
+
   mobileQuery: MediaQueryList;
   logado: boolean;
-
-  fillerNav = Array.from({ length: 2 }, (_, i) => `Nav Item ${i + 1}`);
-
-  fillerContent = Array.from({ length: 1 }, () => '');
 
   private _mobileQueryListener: () => void;
 
