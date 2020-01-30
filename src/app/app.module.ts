@@ -8,9 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MenuComponent } from './components/menu/menu.component';
 import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PlanoNovoComponent } from './components/plano-novo/plano-novo.component';
 import { PlanoListComponent } from './components/plano-list/plano-list.component';
@@ -27,9 +25,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
     HeaderComponent,
-    FooterComponent,
     PlanoNovoComponent,
     PlanoListComponent,
     PlanoDetalhesComponent,
