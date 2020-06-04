@@ -14,7 +14,7 @@
     </div>
   </mat-toolbar>
 
-  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+  <mat-sidenav-container class="example-sidenav-container">
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
       fixedTopGap="56">
       <mat-nav-list>
@@ -23,7 +23,7 @@
             <mat-icon>book</mat-icon>
             Disciplina
           </a>
-          <mat-menu #disciplina="matMenu" xPosition="after">
+          <mat-menu #disciplina="matMenu">
             <button mat-menu-item [routerLink]="['/novadisciplina']" routerLinkActive="router-link-active" matTooltip="Criar nova disciplina">
               <mat-icon>create</mat-icon>
               Nova
@@ -40,7 +40,7 @@
             <mat-icon>assignment_turned_in</mat-icon>
             Plano de Ensino
           </a>
-          <mat-menu #plano="matMenu" xPosition="after">
+          <mat-menu #plano="matMenu">
             <button mat-menu-item [routerLink]="['/novoplano']" routerLinkActive="router-link-active" matTooltip="Criar novo plano de ensino">
               <mat-icon>create</mat-icon>
               Novo
@@ -57,7 +57,7 @@
             <mat-icon>person</mat-icon>
             Usuário
           </a>
-          <mat-menu #usuario="matMenu" xPosition="after">
+          <mat-menu #usuario="matMenu">
             <button mat-menu-item [routerLink]="['/novousuario']" routerLinkActive="router-link-active" matTooltip="Criar novo novo usuário">
               <mat-icon>create</mat-icon>
               Novo

@@ -1,23 +1,23 @@
-import { Injectable, EventEmitter } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { tap } from 'rxjs/operators';
+import { Injectable, EventEmitter } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { tap } from "rxjs/operators";
+import { BehaviorSubject } from "rxjs";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class LoginService {
+  public emitirLogin = new BehaviorSubject<any>(null);
 
-  emitirLogin = new EventEmitter<boolean>();
+  private url = "http://localhost:9090/api/auth";
 
-  private url = 'http://localhost:9090/api/auth';
-
-  constructor(
-    private http: HttpClient
-  ) { }
+  constructor(private http: HttpClient) {}
 
   login(data) {
     return this.http.post(this.url, data).pipe(
-      tap((p) => this.emitirLogin.emit(true))
+      tap((p) => {
+        this.emitirLogin.next(true);
+      })
     );
   }
 }

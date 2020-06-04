@@ -41,6 +41,6 @@ export class PlanoListComponent implements OnInit {
   }
 
   visualizar(plano) {
-    this.router.navigateByUrl('/detalhesplano/' + plano);
+    this.router.navigateByUrl('/detalhes-plano/' + plano);
   }
 }
