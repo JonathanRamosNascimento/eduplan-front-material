@@ -29,6 +29,7 @@ div {
   justify-content: space-between;
 }
 
-input, mat-label {
+input,
+mat-label {
   margin-left: 10px;
 }

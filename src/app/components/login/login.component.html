@@ -9,18 +9,31 @@
           <mat-form-field appearance="legacy" class="example-full-width">
             <mat-label>E-mail</mat-label>
             <mat-icon matPrefix>email</mat-icon>
-            <input matInput formControlName="email" placeholder="email@eduplan.com" type="email">
+            <input
+              matInput
+              formControlName="email"
+              placeholder="email@eduplan.com"
+              type="email"
+            />
           </mat-form-field>
           <mat-form-field appearance="legacy" class="example-full-width">
             <mat-label>Senha</mat-label>
             <mat-icon matPrefix>lock</mat-icon>
-            <input matInput formControlName="password" placeholder="Senha" type="password" (keyup.enter)="login()">
+            <input
+              matInput
+              formControlName="password"
+              placeholder="Senha"
+              type="password"
+              (keyup.enter)="login()"
+            />
           </mat-form-field>
         </form>
       </mat-card-content>
       <mat-card-actions class="actions">
         <button mat-raised-button color="accent">Registar</button>
-        <button mat-raised-button color="primary" (click)="login()">Entrar</button>
+        <button mat-raised-button color="primary" (click)="login()">
+          Entrar
+        </button>
       </mat-card-actions>
     </mat-card>
   </div>

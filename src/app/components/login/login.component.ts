@@ -7,13 +7,12 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-
   loginForm: FormGroup = this.fb.group({
-    'email': ['', [Validators.required, Validators.email]],
-    'password': ['', [Validators.required]],
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required]],
   });
 
   constructor(
@@ -21,10 +20,9 @@ export class LoginComponent implements OnInit {
     private loginService: LoginService,
     private router: Router,
     private _snackBar: MatSnackBar
-  ) { }
+  ) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   login() {
     this.loginService.login(this.loginForm.value).subscribe(
