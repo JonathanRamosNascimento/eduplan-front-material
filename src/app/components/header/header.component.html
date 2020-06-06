@@ -21,7 +21,7 @@
   <mat-sidenav-container class="example-sidenav-container">
     <mat-sidenav
       #snav
-      [mode]="mobileQuery.matches ? 'over' : 'side'"
+      mode="over"
       [fixedInViewport]="mobileQuery.matches"
       fixedTopGap="56"
     >
@@ -109,14 +109,7 @@
       </mat-nav-list>
     </mat-sidenav>
 
-    <mat-sidenav-content
-      style="
-        max-width: 1000px;
-        display: flex;
-        flex-direction: column;
-        margin: auto;
-      "
-    >
+    <mat-sidenav-content>
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>

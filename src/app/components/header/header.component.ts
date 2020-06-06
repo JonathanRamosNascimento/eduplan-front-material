@@ -1,12 +1,12 @@
-import { LoginService } from "./../../services/login.service";
-import { Component, OnInit, ChangeDetectorRef, OnDestroy } from "@angular/core";
-import { MediaMatcher } from "@angular/cdk/layout";
-import { Router } from "@angular/router";
+import { LoginService } from './../../services/login.service';
+import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
+import { MediaMatcher } from '@angular/cdk/layout';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: "app-header",
-  templateUrl: "./header.component.html",
-  styleUrls: ["./header.component.css"],
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   mobileQuery: MediaQueryList;
@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     private router: Router,
     private loginService: LoginService
   ) {
-    this.mobileQuery = media.matchMedia("(max-width: 600px)");
+    this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
@@ -29,11 +29,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.loginService.emitirLogin.subscribe((login) => {
       this.logado = login;
     });
-    let token = sessionStorage.getItem("eduplan_token");
+    let token = sessionStorage.getItem('eduplan_token');
     if (token) {
       this.logado = true;
     } else {
-      this.router.navigate(["login"]);
+      this.router.navigate(['login']);
     }
   }
 
@@ -44,6 +44,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   sair() {
     this.loginService.emitirLogin.next(false);
     sessionStorage.clear();
-    this.router.navigate(["login"]);
+    this.router.navigate(['login']);
   }
 }

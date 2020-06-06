@@ -47,6 +47,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     MaterialModule,
     MatNativeDateModule,
     ReactiveFormsModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
