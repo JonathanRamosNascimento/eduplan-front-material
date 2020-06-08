@@ -1,14 +1,14 @@
-import { LoginService } from './../../services/login.service';
+import { LoginService } from '../../services/login.service';
 import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css'],
+  selector: 'app-menu',
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.css'],
 })
-export class HeaderComponent implements OnInit, OnDestroy {
+export class MenuComponent implements OnInit, OnDestroy {
   mobileQuery: MediaQueryList;
   logado: boolean;
 

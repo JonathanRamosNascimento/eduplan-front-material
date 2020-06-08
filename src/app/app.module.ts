@@ -1,3 +1,4 @@
+import { MenuComponent } from './components/menu/menu.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material.module';
@@ -8,7 +9,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HeaderComponent } from './components/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PlanoNovoComponent } from './components/plano-novo/plano-novo.component';
 import { PlanoListComponent } from './components/plano-list/plano-list.component';
@@ -25,7 +25,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
+    MenuComponent,
     PlanoNovoComponent,
     PlanoListComponent,
     PlanoDetalhesComponent,
@@ -36,7 +36,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     UsuarioListaComponent,
     UsuarioDetalhesComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,9 +47,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     MaterialModule,
     MatNativeDateModule,
     ReactiveFormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

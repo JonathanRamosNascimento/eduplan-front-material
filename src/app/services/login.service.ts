@@ -17,7 +17,7 @@ export class LoginService {
   }
 
   login(data) {
-    return this.http.post(this.url, data).pipe(
+    return this.http.post(`${this.url}/auth`, data).pipe(
       tap((p) => {
         this.emitirLogin.next(true);
       })

@@ -14,6 +14,6 @@ export class DisciplinaService {
   }
 
   salvar(data: Disciplina) {
-    this.http.post(`${this.url}/disciplina`, data);
+    return this.http.post(`${this.url}/disciplina`, data);
   }
 }

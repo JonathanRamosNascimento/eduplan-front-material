@@ -1,6 +1,167 @@
-<div style="width: 100%;">
-  <mat-form-field appearance="outline" style="width: 300px;">
+<form [formGroup]="disciplinaForm" class="container">
+  <mat-form-field appearance="outline">
     <mat-label>Nome da disciplina</mat-label>
-    <input matInput placeholder="Digite o nome da disciplina" />
+    <input
+      matInput
+      placeholder="Digite o nome da disciplina"
+      formControlName="nome"
+      required
+    />
   </mat-form-field>
-</div>
+  <mat-form-field appearance="outline">
+    <mat-label>Carga horária teórica</mat-label>
+    <input
+      matInput
+      placeholder="Digite a carga horária teórica"
+      formControlName="chteorica"
+      type="number"
+      autocomplete="off"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Carga horária prática</mat-label>
+    <input
+      matInput
+      placeholder="Digite a carga horária prática"
+      formControlName="chpratica"
+      type="number"
+      autocomplete="off"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Carga horária total</mat-label>
+    <input
+      matInput
+      placeholder="Digite a carga horária total"
+      formControlName="chtotal"
+      type="number"
+      autocomplete="off"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Ementa</mat-label>
+    <input
+      matInput
+      placeholder="Digite a ementa"
+      formControlName="ementa"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Objetivo Geral</mat-label>
+    <input
+      matInput
+      placeholder="Digite o Objetivo Geral"
+      formControlName="objetivoGeral"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Objetivos Especificos</mat-label>
+    <input
+      matInput
+      placeholder="Digite os Objetivos Especificos"
+      formControlName="objetivoEspecifico"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Habilidade e Competências</mat-label>
+    <input
+      matInput
+      placeholder="Digite as habilidade e competências"
+      formControlName="habilidadeCompetencias"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Conteúdo Programático</mat-label>
+    <input
+      matInput
+      placeholder="Digite o Conteúdo Programático"
+      formControlName="conteudoProgramatico"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Procedimentos Didáticos</mat-label>
+    <input
+      matInput
+      placeholder="Digite o Procedimentos Didáticos"
+      formControlName="procedimentosDidaticos"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Atividade Integrativa</mat-label>
+    <input
+      matInput
+      placeholder="Digite a Atividade Integrativa"
+      formControlName="atividadeIntegrativa"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Primeira VA</mat-label>
+    <input
+      matInput
+      placeholder="Digite a Primeira VA"
+      formControlName="primeiraVA"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Segunda VA</mat-label>
+    <input
+      matInput
+      placeholder="Digite a Segunda VA"
+      formControlName="segundaVA"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Terceira VA</mat-label>
+    <input
+      matInput
+      placeholder="Digite a Terceira VA"
+      formControlName="terceiraVA"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Bibliografia Basica</mat-label>
+    <input
+      matInput
+      placeholder="Digite a Bibliografia Basica"
+      formControlName="bibliografiaBasica"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Bibliografia Complementar</mat-label>
+    <input
+      matInput
+      placeholder="Digite a Bibliografia Complementar"
+      formControlName="bibliografiaComplementar"
+      required
+    />
+  </mat-form-field>
+
+  <div
+    fxLayout="row"
+    fxLayoutAlign="space-between stretch"
+    style="width: 100%; padding: 0 15px;"
+  >
+    <button
+      mat-raised-button
+      color="warn"
+      [routerLink]="['/lista-disciplinas']"
+    >
+      CANCELAR
+    </button>
+    <button mat-raised-button color="primary" (click)="salvar()">SALVAR</button>
+  </div>
+</form>

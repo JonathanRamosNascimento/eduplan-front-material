@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { DisciplinaService } from './../../services/disciplina.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisciplinaNovoComponent implements OnInit {
   disciplinaForm: FormGroup = this.fb.group({
+    id: [null],
     nome: ['', [Validators.required, Validators.email]],
     chteorica: ['', [Validators.required]],
     chpratica: ['', [Validators.required]],
@@ -26,7 +29,24 @@ export class DisciplinaNovoComponent implements OnInit {
     bibliografiaComplementar: ['', [Validators.required]],
   });
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private disciplianService: DisciplinaService,
+    private router: Router
+  ) {}
 
   ngOnInit() {}
+
+  salvar() {
+    this.disciplianService.salvar(this.disciplinaForm.value).subscribe(
+      (res) => {
+        this.disciplinaForm.reset();
+        this.router.navigate(['/lista-disciplinas']);
+        console.log(res);
+      },
+      (err) => {
+        console.error(err);
+      }
+    );
+  }
 }
