@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class DisciplinaNovoComponent implements OnInit {
   disciplinaForm: FormGroup = this.fb.group({
     id: [null],
-    nome: ['', [Validators.required, Validators.email]],
+    nome: ['', [Validators.required]],
     chteorica: ['', [Validators.required]],
     chpratica: ['', [Validators.required]],
     chtotal: ['', [Validators.required]],
@@ -38,11 +38,12 @@ export class DisciplinaNovoComponent implements OnInit {
   ngOnInit() {}
 
   salvar() {
-    this.disciplianService.salvar(this.disciplinaForm.value).subscribe(
+    console.log(this.disciplinaForm.value);
+
+    this.disciplianService.createOrUpdate(this.disciplinaForm.value).subscribe(
       (res) => {
         this.disciplinaForm.reset();
         this.router.navigate(['/lista-disciplinas']);
-        console.log(res);
       },
       (err) => {
         console.error(err);
