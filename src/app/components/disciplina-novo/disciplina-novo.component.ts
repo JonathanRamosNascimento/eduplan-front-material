@@ -1,4 +1,5 @@
-import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router, ActivatedRoute } from '@angular/router';
 import { DisciplinaService } from './../../services/disciplina.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
@@ -32,22 +33,40 @@ export class DisciplinaNovoComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private disciplianService: DisciplinaService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute,
+    private _snackBar: MatSnackBar
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    const id: string = this.route.snapshot.params['id'];
+    if (id != undefined) {
+      this.getDisciplina(id);
+    }
+  }
 
   salvar() {
-    console.log(this.disciplinaForm.value);
-
     this.disciplianService.createOrUpdate(this.disciplinaForm.value).subscribe(
       (res) => {
         this.disciplinaForm.reset();
         this.router.navigate(['/lista-disciplinas']);
+        this.openSnackBar('Salvo com sucesso', 'OK');
       },
       (err) => {
         console.error(err);
       }
     );
+  }
+
+  getDisciplina(id: string) {
+    this.disciplianService.getOne(id).subscribe((res) => {
+      this.disciplinaForm.setValue(res['data']);
+    });
+  }
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 4000,
+    });
   }
 }

@@ -30,6 +30,12 @@ export class DisciplinaService {
   }
 
   getAll(page: number, count: number) {
-    return this.http.get(`${this.url}/disciplina/${page}/${count}`, { headers: this.token });
+    return this.http.get(`${this.url}/disciplina/${page}/${count}`, {
+      headers: this.token,
+    });
+  }
+
+  getOne(id: string) {
+    return this.http.get(`${this.url}/disciplina/${id}`, { headers: this.token });
   }
 }
