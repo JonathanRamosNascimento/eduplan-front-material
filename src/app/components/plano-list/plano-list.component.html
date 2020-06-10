@@ -1,33 +1,43 @@
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource">
-
     <ng-container matColumnDef="disciplina">
       <th mat-header-cell *matHeaderCellDef>Disciplina</th>
-      <td mat-cell *matCellDef="let element"> {{element.disciplina}} </td>
+      <td mat-cell *matCellDef="let element">{{ element.disciplina.nome }}</td>
     </ng-container>
 
     <ng-container matColumnDef="turno">
       <th mat-header-cell *matHeaderCellDef>Turno</th>
-      <td mat-cell *matCellDef="let element"> {{element.turno}} </td>
+      <td mat-cell *matCellDef="let element">{{ element.turno }}</td>
     </ng-container>
 
     <ng-container matColumnDef="ano">
       <th mat-header-cell *matHeaderCellDef>Ano/Semestre</th>
-      <td mat-cell *matCellDef="let element"> {{element.ano}}/{{element.semestre}} </td>
+      <td mat-cell *matCellDef="let element">
+        {{ element.ano }}/{{ element.semestre }}
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="acoes">
       <th mat-header-cell *matHeaderCellDef>Ações</th>
       <td mat-cell *matCellDef="let element">
-        <a (click)="editar(element.id)"><mat-icon color="primary">edit</mat-icon></a>
-        <a (click)="visualizar(element.id)"><mat-icon color="primary">open_in_new</mat-icon></a>
-        <a (click)="deletar(element.id)"><mat-icon color="warn">delete</mat-icon></a>
+        <a (click)="editar(element.id)"
+          ><mat-icon color="primary">edit</mat-icon></a
+        >
+        <a (click)="visualizar(element.id)"
+          ><mat-icon color="primary">open_in_new</mat-icon></a
+        >
+        <a (click)="deletar(element.id)"
+          ><mat-icon color="warn">delete</mat-icon></a
+        >
       </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
 
-  <mat-paginator [pageSizeOptions]="[2, 5, 10, 15, 20]" showFirstLastButtons></mat-paginator>
+  <mat-paginator
+    [pageSizeOptions]="[2, 5, 10, 15, 20]"
+    showFirstLastButtons
+  ></mat-paginator>
 </div>

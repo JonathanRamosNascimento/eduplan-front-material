@@ -7,10 +7,9 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-plano-list',
   templateUrl: './plano-list.component.html',
-  styleUrls: ['./plano-list.component.css']
+  styleUrls: ['./plano-list.component.css'],
 })
 export class PlanoListComponent implements OnInit {
-
   planos: any;
   dataSource;
   displayedColumns: string[] = ['disciplina', 'turno', 'ano', 'acoes'];
@@ -20,16 +19,15 @@ export class PlanoListComponent implements OnInit {
   constructor(
     private planoEnsinoService: PlanoDeEnsinoService,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit() {
-    let a = this.planoEnsinoService.getAll().subscribe(
-      (data) => {
-        this.planos = data['data']['content'];
-        this.dataSource = new MatTableDataSource<any>(this.planos);
-        this.dataSource.paginator = this.paginator;
-      }
-    );
+    this.planoEnsinoService.getAll().subscribe((data) => {
+      this.planos = data['data']['content'];
+      console.log(this.planos);
+      this.dataSource = new MatTableDataSource<any>(this.planos);
+      this.dataSource.paginator = this.paginator;
+    });
   }
 
   editar(plano) {
