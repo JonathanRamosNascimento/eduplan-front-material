@@ -17,4 +17,5 @@ mat-form-field {
   box-sizing: border-box;
   place-content: center;
   align-items: center;
+  padding: 5px;
 }

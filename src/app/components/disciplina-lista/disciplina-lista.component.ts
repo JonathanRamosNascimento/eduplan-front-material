@@ -25,15 +25,14 @@ export class DisciplinaListaComponent implements OnInit {
     this.getAll();
   }
 
-  ngOnInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
+  ngOnInit() {}
 
   getAll() {
-    this.disciplinaService.getAll(0, 10).subscribe(
+    this.disciplinaService.getAll(0, 200).subscribe(
       (res) => {
         this.dataSource = new MatTableDataSource(res['data'].content);
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
       },
       (err) => console.error(err)
     );

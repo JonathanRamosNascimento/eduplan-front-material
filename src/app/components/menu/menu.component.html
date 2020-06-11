@@ -43,6 +43,7 @@
               [routerLink]="['/nova-disciplina']"
               routerLinkActive="router-link-active"
               matTooltip="Criar nova disciplina"
+              (click)="snav.toggle()"
             >
               <mat-icon>create</mat-icon>
               Nova
@@ -52,6 +53,7 @@
               [routerLink]="['/lista-disciplinas']"
               routerLinkActive="router-link-active"
               matTooltip="Listar disciplinas existentes"
+              (click)="snav.toggle()"
             >
               <mat-icon>list</mat-icon>
               Lista
@@ -70,6 +72,7 @@
               [routerLink]="['/novo-plano']"
               routerLinkActive="router-link-active"
               matTooltip="Criar novo plano de ensino"
+              (click)="snav.toggle()"
             >
               <mat-icon>create</mat-icon>
               Novo
@@ -79,6 +82,7 @@
               [routerLink]="['/lista-planos']"
               routerLinkActive="router-link-active"
               matTooltip="Listar planos de ensino existentes"
+              (click)="snav.toggle()"
             >
               <mat-icon>list</mat-icon>
               Lista
@@ -97,6 +101,7 @@
               [routerLink]="['/novo-usuario']"
               routerLinkActive="router-link-active"
               matTooltip="Criar novo novo usuário"
+              (click)="snav.toggle()"
             >
               <mat-icon>create</mat-icon>
               Novo
@@ -106,6 +111,7 @@
               [routerLink]="['/lista-usuarios']"
               routerLinkActive="router-link-active"
               matTooltip="Listar usuários existentes"
+              (click)="snav.toggle()"
             >
               <mat-icon>list</mat-icon>
               Lista

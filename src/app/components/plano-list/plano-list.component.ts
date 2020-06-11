@@ -24,7 +24,6 @@ export class PlanoListComponent implements OnInit {
   ngOnInit() {
     this.planoEnsinoService.getAll().subscribe((data) => {
       this.planos = data['data']['content'];
-      console.log(this.planos);
       this.dataSource = new MatTableDataSource<any>(this.planos);
       this.dataSource.paginator = this.paginator;
     });

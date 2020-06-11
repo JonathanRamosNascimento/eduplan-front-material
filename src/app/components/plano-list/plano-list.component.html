@@ -2,7 +2,9 @@
   <table mat-table [dataSource]="dataSource">
     <ng-container matColumnDef="disciplina">
       <th mat-header-cell *matHeaderCellDef>Disciplina</th>
-      <td mat-cell *matCellDef="let element">{{ element.disciplina.nome }}</td>
+      <td mat-cell *matCellDef="let element">
+        <a (click)="visualizar(element.id)">{{ element.disciplina.nome }}</a>
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="turno">
@@ -22,9 +24,6 @@
       <td mat-cell *matCellDef="let element">
         <a (click)="editar(element.id)"
           ><mat-icon color="primary">edit</mat-icon></a
-        >
-        <a (click)="visualizar(element.id)"
-          ><mat-icon color="primary">open_in_new</mat-icon></a
         >
         <a (click)="deletar(element.id)"
           ><mat-icon color="warn">delete</mat-icon></a
