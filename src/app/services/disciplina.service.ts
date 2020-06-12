@@ -38,4 +38,8 @@ export class DisciplinaService {
   getOne(id: string) {
     return this.http.get(`${this.url}/disciplina/${id}`, { headers: this.token });
   }
+
+  delete(id: string) {
+    return this.http.delete(`${this.url}/disciplina/${id}`, { headers: this.token });
+  }
 }

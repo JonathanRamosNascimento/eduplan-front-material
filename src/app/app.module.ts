@@ -21,6 +21,7 @@ import { UsuarioListaComponent } from './components/usuario-lista/usuario-lista.
 import { UsuarioDetalhesComponent } from './components/usuario-detalhes/usuario-detalhes.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ModalDeletarComponent } from './components/modal-deletar/modal-deletar.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     UsuarioDetalhesComponent,
     LoginComponent,
     DashboardComponent,
+    ModalDeletarComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,5 +53,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
+  entryComponents: [ModalDeletarComponent],
 })
 export class AppModule {}

@@ -1,3 +1,5 @@
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ModalDeletarComponent } from './../modal-deletar/modal-deletar.component';
 import { Router } from '@angular/router';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
@@ -5,6 +7,7 @@ import { Disciplina } from './../../models/disciplina';
 import { DisciplinaService } from './../../services/disciplina.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-disciplina-lista',
@@ -20,7 +23,9 @@ export class DisciplinaListaComponent implements OnInit {
 
   constructor(
     private disciplinaService: DisciplinaService,
-    private router: Router
+    private router: Router,
+    public dialog: MatDialog,
+    private _snackBar: MatSnackBar
   ) {
     this.getAll();
   }
@@ -52,6 +57,28 @@ export class DisciplinaListaComponent implements OnInit {
   }
 
   delete(id: string) {
-    console.log(id);
+    const dialogRef = this.dialog.open(ModalDeletarComponent, {
+      data: id,
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.disciplinaService.delete(id).subscribe(
+          () => {
+            this.openSnackBar('Deletado com sucesso!', 'OK');
+            this.getAll();
+          },
+          () => {
+            this.openSnackBar('Erro!', 'OK');
+          }
+        );
+      }
+    });
+  }
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 4000,
+    });
   }
 }

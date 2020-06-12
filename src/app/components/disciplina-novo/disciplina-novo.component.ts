@@ -46,16 +46,22 @@ export class DisciplinaNovoComponent implements OnInit {
   }
 
   salvar() {
-    this.disciplianService.createOrUpdate(this.disciplinaForm.value).subscribe(
-      (res) => {
-        this.disciplinaForm.reset();
-        this.router.navigate(['/lista-disciplinas']);
-        this.openSnackBar('Salvo com sucesso', 'OK');
-      },
-      (err) => {
-        console.error(err);
-      }
-    );
+    if (this.disciplinaForm.valid === true) {
+      this.disciplianService
+        .createOrUpdate(this.disciplinaForm.value)
+        .subscribe(
+          (res) => {
+            this.disciplinaForm.reset();
+            this.router.navigate(['/lista-disciplinas']);
+            this.openSnackBar('Salvo com sucesso', 'OK');
+          },
+          (err) => {
+            console.error(err);
+          }
+        );
+    } else {
+      this.openSnackBar('Preencha todos os campos do formulário', 'OK');
+    }
   }
 
   getDisciplina(id: string) {
